@@ -1,7 +1,7 @@
 
 /**
  * Classe para validar o CPF.
- * @author dwildt
+ * @author fulano
  */
 public class CPF {
 
