@@ -17,7 +17,7 @@ public class somaNomes_Original {
 	 */
 	public static void print(Vector paramL){
 		for (int i = 0; i < paramL.size(); i++) {
-			Person p = (Person) paramL.get(i);
+			Pessoa p = (Pessoa) paramL.get(i);
 		    _s += ", " + p.name;			
 		}
 		//remove first comma
@@ -32,19 +32,19 @@ public class somaNomes_Original {
 	public static void main(String[] args) {
 		Vector v = new Vector();
 		
-		Person p = new Person();
+		Pessoa p = new Pessoa();
 		p.name = "Daniel";
 		v.add(p);
 		
-		p = new Person();
+		p = new Pessoa();
 		p.name = "Guilherme";
 		v.add(p);
 
-		p = new Person();
+		p = new Pessoa();
 		p.name = "Gabriel";
 		v.add(p);
 
-		p = new Person();
+		p = new Pessoa();
 		p.name = "Frederico";
 		v.add(p);
 

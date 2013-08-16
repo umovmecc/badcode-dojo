@@ -2,6 +2,8 @@
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 import org.junit.Test;
@@ -12,21 +14,27 @@ public class SomaNomesTest {
 	@Test
 	public void deveVerificarSeListaDeNomesFoiGeradaCorretamente(){
 		//given
-		Person pessoa1 = new Person();
-		pessoa1.name = "Nome1";
+		Person pessoa1 = new Person("Nome1");
 		
-		Person person2 = new Person();
-		person2.name = "Nome2";
+		Person person2 = new Person("Nome2");
 		
-		Vector vector = new Vector();
-		vector.add(pessoa1);
-		vector.add(person2);
+		List listaNomes = new ArrayList<Person>();
+		
+		listaNomes.add(pessoa1);
+		listaNomes.add(person2);
 		
 		//when
-		somaNomes.print(vector);
+		String retorno = SomaNomes.print(listaNomes);
 		
 		//Then
-		assertEquals("Nome1, Nome2", somaNomes._s);
+		assertEquals("Nome1, Nome2", retorno);
 		
 	}
+	
+	@Test
+	public void deveFuncionarComMultiplasChamadas(){
+		deveVerificarSeListaDeNomesFoiGeradaCorretamente();
+		deveVerificarSeListaDeNomesFoiGeradaCorretamente();
+	}
+	
 }

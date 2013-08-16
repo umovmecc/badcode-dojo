@@ -1,58 +1,37 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
-/**
- * Soma os nomes
- * @author dwildt
- */
-public class somaNomes {
-	/**
-	 * a string para somar todos os nomes na lista 
-	 */
-	static String _s = "";
-	
-	/**
-	 * imprime a lista de pessoas
-	 * @param paramL
-	 */
-	public static void print(Vector paramL){
-		for (int i = 0; i < paramL.size(); i++) {
-			Person p = (Person) paramL.get(i);
-		    _s += ", " + p.name;			
+public class SomaNomes {
+
+	public static String print(List<Person> listaNomes) {
+		StringBuilder builder = new StringBuilder();
+		for (Person p : listaNomes) {
+			builder.append(", ").append(p.getName());
 		}
-		_s = _s.substring(2); //remove first comma
-		System.out.print(_s);
+		String output = builder.toString();
+		output = output.substring(2); // remove first comma
+		System.out.print(output);
+		return output;
 	}
-	
-	/**
-	 * c—digo principal
-	 * @param args
-	 */
+
 	public static void main(String[] args) {
-		Vector v = new Vector();
-		
-		Person p = new Person();
-		p.name = "Daniel";
-		v.add(p);
-		
-		p = new Person();
-		p.name = "Guilherme";
+		List v = new ArrayList<Person>();
+
+		Person p = new Person("Daniel");
 		v.add(p);
 
-		p = new Person();
-		p.name = "Gabriel";
+		p = new Person("Guilherme");
 		v.add(p);
 
-		p = new Person();
-		p.name = "Frederico";
+		p = new Person("Gabriel");
+		v.add(p);
+
+		p = new Person("Frederico");
 		v.add(p);
 
 		print(v);
-		
+
 	}
 
-}
-
-class Person{
-	String name;
 }
