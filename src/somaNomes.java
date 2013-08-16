@@ -3,6 +3,8 @@ import java.util.List;
 
 public class SomaNomes {
 	
+	// TODO separar responsabilidades
+	// TODO deixar de ser static
 	public static String concatenaNomes(List<Person> listaNomes) {
 		StringBuilder builder = new StringBuilder();
 		for (Person p : listaNomes) {
@@ -19,20 +21,12 @@ public class SomaNomes {
 	}
 
 	public static void main(String[] args) {
-		List v = new ArrayList<Person>();
+		List<Person> v = new ArrayList<Person>();
 
-		Person p = new Person("Daniel");
-		v.add(p);
-
-		p = new Person("Guilherme");
-		v.add(p);
-
-		p = new Person("Gabriel");
-		v.add(p);
-
-		p = new Person("Frederico");
-		v.add(p);
-
+		v.add(new Person("Daniel"));
+		v.add(new Person("Guilherme"));
+		v.add(new Person("Gabriel"));
+		v.add(new Person("Frederico"));
 		print(v);
 
 	}
