@@ -1,18 +1,21 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 public class SomaNomes {
-
-	public static String print(List<Person> listaNomes) {
+	
+	public static String concatenaNomes(List<Person> listaNomes) {
 		StringBuilder builder = new StringBuilder();
 		for (Person p : listaNomes) {
-			builder.append(", ").append(p.getName());
+			if (builder.length() > 0) {
+				builder.append(", ");
+			}
+			builder.append(p.getName());
 		}
-		String output = builder.toString();
-		output = output.substring(2); // remove first comma
-		System.out.print(output);
-		return output;
+		return builder.toString();
+	}
+
+	public static void print(List<Person> listaNomes) {
+		System.out.print(concatenaNomes(listaNomes));
 	}
 
 	public static void main(String[] args) {

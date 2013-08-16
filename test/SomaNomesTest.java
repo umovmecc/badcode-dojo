@@ -18,13 +18,13 @@ public class SomaNomesTest {
 		
 		Person person2 = new Person("Nome2");
 		
-		List listaNomes = new ArrayList<Person>();
+		List<Person> listaNomes = new ArrayList<Person>();
 		
 		listaNomes.add(pessoa1);
 		listaNomes.add(person2);
 		
 		//when
-		String retorno = SomaNomes.print(listaNomes);
+		String retorno = SomaNomes.concatenaNomes(listaNomes);
 		
 		//Then
 		assertEquals("Nome1, Nome2", retorno);
