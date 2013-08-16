@@ -3,7 +3,7 @@ import java.util.Vector;
 
 /**
  * Soma os nomes
- * @author dwildt
+ * @author fulano
  */
 public class somaNomes_Original {
 	/**
